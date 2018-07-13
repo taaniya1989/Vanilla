@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "539681571503-ag2g65e76imi33pb6jr6nevanh9v6g48.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.sdsu.tvidhate.vanilla",
+            "certificate_hash": "d6304ef70fcc8f8ad4cc6d9ab5f16211c19360b6"
+          }
+        },
+        {
           "client_id": "539681571503-a2hs9a3j8r3kpbtmk7divcqvaiga0nu1.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539681571503-a2hs9a3j8r3kpbtmk7divcqvaiga0nu1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
