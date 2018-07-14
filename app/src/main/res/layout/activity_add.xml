@@ -7,6 +7,14 @@
     tools:context=".AddActivity">
 
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/placeName"
+        android:layout_alignParentTop="true"
+        android:hint="@string/placeName"
+        android:layout_marginVertical="10dp"/>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

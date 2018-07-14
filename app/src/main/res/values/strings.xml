@@ -16,5 +16,6 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="action_about">About This App</string>
+    <string name="placeName">Name of Place</string>
 
 </resources>
