@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
 import java.sql.Timestamp;
 import java.io.File;
 
@@ -87,7 +88,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         {
             case R.id.selectImageButton:
                 Intent selectImageFromGallery = new Intent(Intent.ACTION_GET_CONTENT);
-
                 selectImageFromGallery.setType("image/*");
                 startActivityForResult(selectImageFromGallery, IMAGE_SELECTED_RESULT);
                 break;

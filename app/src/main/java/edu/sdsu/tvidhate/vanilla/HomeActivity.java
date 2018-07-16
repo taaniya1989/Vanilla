@@ -85,7 +85,9 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_gallery) {
-
+            Intent myplaces = new Intent(HomeActivity.this, MyPlacesActivity.class);
+            startActivity(myplaces);
+            finish();
         } else if (id == R.id.nav_signout) {
             FirebaseAuth.getInstance().signOut();
             Intent login = new Intent(HomeActivity.this, LoginActivity.class);
