@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.sql.Timestamp;
 import java.io.File;
@@ -36,6 +38,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     private ImageView selectedImage;
     private TextView placeName;
     private String photoPath;
+    private int height,width;
 
     private static final int IMAGE_SELECTED_RESULT = 2;
     private static final int IMAGE_CAPTURED_RESULT = 3;
@@ -50,6 +53,11 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         ImageButton openCameraButton = findViewById(R.id.openCameraButton);
         selectedImage = findViewById(R.id.selectedImage);
         placeName = findViewById(R.id.placeName);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        height = displayMetrics.heightPixels;
+        width = displayMetrics.widthPixels;
 
         openCameraButton.setOnClickListener(this);
         selectImageButton.setOnClickListener(this);
@@ -68,7 +76,8 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 && data != null && data.getData() != null)
         {
             mUri = data.getData();
-            selectedImage.setImageURI(mUri);
+//            selectedImage.setImageURI(mUri);
+            Picasso.with(getApplicationContext()).load(mUri).resize(width/2,height/4).into(selectedImage);
             Log.i("VANILLA_INFO",mUri.toString());
         }
         if(requestCode == IMAGE_CAPTURED_RESULT && resultCode == RESULT_OK
